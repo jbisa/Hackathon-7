@@ -14,12 +14,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var cameraView: UIImageView!
     
-    //var color = UIColor.redColor()
-    
     override func viewDidLoad() {
         sleep(2)
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.backgroundColor = color
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,46 +52,45 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             var takenImage: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
             var imageData = UIImagePNGRepresentation(takenImage)
             
-//            if (imageData != nil) {
-//                // Enter URL here
-//                var request = NSMutableURLRequest(URL: NSURL(string:"")!)
-//                var session = NSURLSession.sharedSession()
-//                
-//                request.HTTPMethod = "POST"
-//                
-//                var boundary = NSString(format: "---------randomValueHere")
-//                var contentType = NSString(format: "multipart/form-data; boundary=" + boundary)
-//                request.addValue(contentType, forHTTPHeaderField: "Content-Type")
-//                
-//                var body = NSMutableData.alloc()
-//                
-//                // Title
-//                body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-//                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-//                body.appendData("Foo Text".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
-//                
-//                // Image
-//                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-//                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"profile_img\"; filename=\"img.jpg\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-//                body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-//                body.appendData(imageData)
-//                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-//                
-//                
-//                request.HTTPBody = body
-//                
-//                var response: NSURLResponse? = nil
-//                var error: NSError? = nil
-//                var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-//                
-//                var returnString = NSString(data: returnData!, encoding: NSUTF8StringEncoding)
-//                
-//                println("returnString \(returnString)")
-//                
-//                self.sendImageAlert()
-//            }
+            if (imageData != nil) {
+                // Enter URL here
+                var request = NSMutableURLRequest(URL: NSURL(string:"http://76.28.86.16:5000/translate")!)
+                var session = NSURLSession.sharedSession()
+                
+                request.HTTPMethod = "POST"
+                
+                var boundary = NSString(format: "---------randomValueHere")
+                var contentType = NSString(format: "multipart/form-data; boundary=" + boundary)
+                request.addValue(contentType, forHTTPHeaderField: "Content-Type")
+                
+                var body = NSMutableData.alloc()
+                
+                // Title
+                body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData("IMG_0355.JPG".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+                
+                // Image
+                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"profile_img\"; filename=\"IMG_0355.JPG\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(imageData)
+                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+                
+                request.HTTPBody = body
+                
+                var response: NSURLResponse? = nil
+                var error: NSError? = nil
+                var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+                
+                var returnString = NSString(data: returnData!, encoding: NSUTF8StringEncoding)
+                
+                println("returnString \(returnString)")
+                
+                self.sendImageAlert()
+            }
             
-            self.sendImageAlert()
+            //self.sendImageAlert()
             
             UIImageWriteToSavedPhotosAlbum(takenImage, nil, nil, nil)
             
