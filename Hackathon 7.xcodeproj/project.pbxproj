@@ -17,6 +17,7 @@
 		4D8FF1501A86B41A005CE741 /* logo-29pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF14D1A86B41A005CE741 /* logo-29pt.png */; };
 		4D8FF1511A86B41A005CE741 /* logo-40pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF14E1A86B41A005CE741 /* logo-40pt.png */; };
 		4D8FF1521A86B41A005CE741 /* logo-60pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF14F1A86B41A005CE741 /* logo-60pt.png */; };
+		4D8FF1541A86E709005CE741 /* background.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1531A86E709005CE741 /* background.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4D8FF14D1A86B41A005CE741 /* logo-29pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-29pt.png"; sourceTree = "<group>"; };
 		4D8FF14E1A86B41A005CE741 /* logo-40pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-40pt.png"; sourceTree = "<group>"; };
 		4D8FF14F1A86B41A005CE741 /* logo-60pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-60pt.png"; sourceTree = "<group>"; };
+		4D8FF1531A86E709005CE741 /* background.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				4D8FF14D1A86B41A005CE741 /* logo-29pt.png */,
-				4D8FF14E1A86B41A005CE741 /* logo-40pt.png */,
+				4D8FF1531A86E709005CE741 /* background.PNG */,
 				4D8FF14F1A86B41A005CE741 /* logo-60pt.png */,
+				4D8FF14E1A86B41A005CE741 /* logo-40pt.png */,
 				4D8FF14B1A86AABA005CE741 /* monster.png */,
 			);
 			path = Images;
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8FF1301A853BE4005CE741 /* Main.storyboard in Resources */,
+				4D8FF1541A86E709005CE741 /* background.PNG in Resources */,
 				4D8FF1351A853BE4005CE741 /* LaunchScreen.xib in Resources */,
 				4D8FF1511A86B41A005CE741 /* logo-40pt.png in Resources */,
 				4D8FF14C1A86AABA005CE741 /* monster.png in Resources */,

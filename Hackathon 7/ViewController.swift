@@ -14,9 +14,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var cameraView: UIImageView!
     
+    var color = UIColor.redColor()
+    
     override func viewDidLoad() {
         sleep(1)
         super.viewDidLoad()
+        //self.navigationController?.navigationBar.backgroundColor = color
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,9 +43,52 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
         NSLog("Did Finish Picking")
         
-        
         if(picker.sourceType == UIImagePickerControllerSourceType.Camera) {
             var imageToSave: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+            
+            var imageData = UIImagePNGRepresentation(imageToSave)
+            
+//            if (imageData != nil) {
+//                // Enter URL here
+//                var request = NSMutableURLRequest(URL: NSURL(string:"")!)
+//                var session = NSURLSession.sharedSession()
+//                
+//                request.HTTPMethod = "POST"
+//                
+//                var boundary = NSString(format: "---------randomValueHere")
+//                var contentType = NSString(format: "multipart/form-data; boundary=" + boundary)
+//                request.addValue(contentType, forHTTPHeaderField: "Content-Type")
+//                
+//                var body = NSMutableData.alloc()
+//                
+//                // Title
+//                body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+//                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+//                body.appendData("Foo Text".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+//                
+//                // Image
+//                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+//                body.appendData(NSString(format:"Content-Disposition: form-data; name=\"profile_img\"; filename=\"img.jpg\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+//                body.appendData(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+//                body.appendData(imageData)
+//                body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+//                
+//                
+//                request.HTTPBody = body
+//                
+//                var response: NSURLResponse? = nil
+//                var error: NSError? = nil
+//                var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+//                
+//                var returnString = NSString(data: returnData!, encoding: NSUTF8StringEncoding)
+//                
+//                println("returnString \(returnString)")
+//                
+//                self.sendImageAlert()
+//            }
+            
+            self.sendImageAlert()
+            
             UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
             
             self.savedImageAlert()
@@ -50,10 +96,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    func sendImageAlert() {
+        var alert:UIAlertView = UIAlertView()
+        alert.title = "Image Delivered!"
+        alert.message = "Your picture was delivered to the server."
+        alert.delegate = self
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
     func savedImageAlert() {
         var alert:UIAlertView = UIAlertView()
         alert.title = "Saved!"
-        alert.message = "Your picture was saved to Camera Roll"
+        alert.message = "Your picture was saved to Camera Roll."
         alert.delegate = self
         alert.addButtonWithTitle("Ok")
         alert.show()
