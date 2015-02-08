@@ -14,10 +14,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var cameraView: UIImageView!
     
-    var color = UIColor.redColor()
+    //var color = UIColor.redColor()
     
     override func viewDidLoad() {
-        sleep(1)
+        sleep(2)
         super.viewDidLoad()
         //self.navigationController?.navigationBar.backgroundColor = color
     }
@@ -40,13 +40,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    @IBAction func selectPhoto(sender: AnyObject) {
+        var picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = false
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(picker, animated: true, completion: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
         NSLog("Did Finish Picking")
         
-        if(picker.sourceType == UIImagePickerControllerSourceType.Camera) {
-            var imageToSave: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
-            
-            var imageData = UIImagePNGRepresentation(imageToSave)
+        if (picker.sourceType == UIImagePickerControllerSourceType.Camera) {
+            var takenImage: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+            var imageData = UIImagePNGRepresentation(takenImage)
             
 //            if (imageData != nil) {
 //                // Enter URL here
@@ -89,11 +96,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             self.sendImageAlert()
             
-            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+            UIImageWriteToSavedPhotosAlbum(takenImage, nil, nil, nil)
             
             self.savedImageAlert()
             self.dismissViewControllerAnimated(true, completion: nil)
+        } else if (picker.sourceType == UIImagePickerControllerSourceType.PhotoLibrary) {
+            var selectedImage: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+            var imageData = UIImagePNGRepresentation(selectedImage)
+            
+            // Do server stuff here
+            
+            self.selectedImageAlert()
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        
     }
     
     func sendImageAlert() {
@@ -102,6 +119,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         alert.message = "Your picture was delivered to the server."
         alert.delegate = self
         alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
+    func selectedImageAlert() {
+        var alert:UIAlertView = UIAlertView()
+        alert.title = "Image Selected"
+        alert.message = "Are you sure you want to use this image?"
+        alert.delegate = self
+        alert.addButtonWithTitle("Yes")
+        alert.addButtonWithTitle("No")
         alert.show()
     }
     

@@ -26,7 +26,11 @@
                                                 <action selector="takePhoto:" destination="vXZ-lx-hvc" id="VZb-WH-2oB"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="e9F-rc-Pod"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="e9F-rc-Pod">
+                                            <connections>
+                                                <action selector="selectPhoto:" destination="vXZ-lx-hvc" id="Lhn-LO-vhk"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
