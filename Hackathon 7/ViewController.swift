@@ -60,27 +60,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
                 request.HTTPMethod = "POST"
                 
-                //var boundary = NSString(format: "---------randomValueHere")
-                //var contentType = NSString(format: "multipart/form-data; boundary=" + boundary)
-                //var contentType = NSString(format: "multipart/form-data;")
-                //request.addValue(contentType, forHTTPHeaderField: "Content-Type")
-                
                 var body = NSMutableData.alloc()
                 
-                // Title
-                //body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                 //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData("IMG_0355.png".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
-                
-                // Image
-                //body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format:"Content-Disposition: form-data; name=\"IMG_0355\"; filename=\"IMG_0355.PNG\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "Content-Type: multipart/form-data\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
                 body.appendData(imageData)
-                //body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
                 
                 request.HTTPBody = body
                 
