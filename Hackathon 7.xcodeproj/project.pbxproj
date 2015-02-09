@@ -18,6 +18,15 @@
 		4D8FF1511A86B41A005CE741 /* logo-40pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF14E1A86B41A005CE741 /* logo-40pt.png */; };
 		4D8FF1521A86B41A005CE741 /* logo-60pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF14F1A86B41A005CE741 /* logo-60pt.png */; };
 		4D8FF1541A86E709005CE741 /* background.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1531A86E709005CE741 /* background.PNG */; };
+		4D8FF19A1A884701005CE741 /* OpenDyslexic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1911A884701005CE741 /* OpenDyslexic-Bold.otf */; };
+		4D8FF19B1A884701005CE741 /* OpenDyslexic-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1921A884701005CE741 /* OpenDyslexic-BoldItalic.otf */; };
+		4D8FF19C1A884701005CE741 /* OpenDyslexic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1931A884701005CE741 /* OpenDyslexic-Italic.otf */; };
+		4D8FF19D1A884701005CE741 /* OpenDyslexic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1941A884701005CE741 /* OpenDyslexic-Regular.otf */; };
+		4D8FF19E1A884701005CE741 /* OpenDyslexicAlta-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1951A884701005CE741 /* OpenDyslexicAlta-Bold.otf */; };
+		4D8FF19F1A884701005CE741 /* OpenDyslexicAlta-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1961A884701005CE741 /* OpenDyslexicAlta-BoldItalic.otf */; };
+		4D8FF1A01A884701005CE741 /* OpenDyslexicAlta-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1971A884701005CE741 /* OpenDyslexicAlta-Italic.otf */; };
+		4D8FF1A11A884701005CE741 /* OpenDyslexicAlta-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1981A884701005CE741 /* OpenDyslexicAlta-Regular.otf */; };
+		4D8FF1A21A884701005CE741 /* OpenDyslexicMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8FF1991A884701005CE741 /* OpenDyslexicMono-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +55,15 @@
 		4D8FF14E1A86B41A005CE741 /* logo-40pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-40pt.png"; sourceTree = "<group>"; };
 		4D8FF14F1A86B41A005CE741 /* logo-60pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-60pt.png"; sourceTree = "<group>"; };
 		4D8FF1531A86E709005CE741 /* background.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.PNG; sourceTree = "<group>"; };
+		4D8FF1911A884701005CE741 /* OpenDyslexic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Bold.otf"; sourceTree = "<group>"; };
+		4D8FF1921A884701005CE741 /* OpenDyslexic-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-BoldItalic.otf"; sourceTree = "<group>"; };
+		4D8FF1931A884701005CE741 /* OpenDyslexic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Italic.otf"; sourceTree = "<group>"; };
+		4D8FF1941A884701005CE741 /* OpenDyslexic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic-Regular.otf"; sourceTree = "<group>"; };
+		4D8FF1951A884701005CE741 /* OpenDyslexicAlta-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Bold.otf"; sourceTree = "<group>"; };
+		4D8FF1961A884701005CE741 /* OpenDyslexicAlta-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-BoldItalic.otf"; sourceTree = "<group>"; };
+		4D8FF1971A884701005CE741 /* OpenDyslexicAlta-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Italic.otf"; sourceTree = "<group>"; };
+		4D8FF1981A884701005CE741 /* OpenDyslexicAlta-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicAlta-Regular.otf"; sourceTree = "<group>"; };
+		4D8FF1991A884701005CE741 /* OpenDyslexicMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexicMono-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8FF12A1A853BE4005CE741 /* AppDelegate.swift */,
+				4D8FF1901A884701005CE741 /* Fonts */,
 				4D8FF12C1A853BE4005CE741 /* ViewController.swift */,
 				4D8FF14A1A86AABA005CE741 /* Images */,
 				4D8FF12E1A853BE4005CE741 /* Main.storyboard */,
@@ -133,6 +152,22 @@
 				4D8FF14B1A86AABA005CE741 /* monster.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		4D8FF1901A884701005CE741 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4D8FF1911A884701005CE741 /* OpenDyslexic-Bold.otf */,
+				4D8FF1921A884701005CE741 /* OpenDyslexic-BoldItalic.otf */,
+				4D8FF1931A884701005CE741 /* OpenDyslexic-Italic.otf */,
+				4D8FF1941A884701005CE741 /* OpenDyslexic-Regular.otf */,
+				4D8FF1951A884701005CE741 /* OpenDyslexicAlta-Bold.otf */,
+				4D8FF1961A884701005CE741 /* OpenDyslexicAlta-BoldItalic.otf */,
+				4D8FF1971A884701005CE741 /* OpenDyslexicAlta-Italic.otf */,
+				4D8FF1981A884701005CE741 /* OpenDyslexicAlta-Regular.otf */,
+				4D8FF1991A884701005CE741 /* OpenDyslexicMono-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,10 +252,19 @@
 			files = (
 				4D8FF1301A853BE4005CE741 /* Main.storyboard in Resources */,
 				4D8FF1541A86E709005CE741 /* background.PNG in Resources */,
+				4D8FF19A1A884701005CE741 /* OpenDyslexic-Bold.otf in Resources */,
+				4D8FF19C1A884701005CE741 /* OpenDyslexic-Italic.otf in Resources */,
+				4D8FF19E1A884701005CE741 /* OpenDyslexicAlta-Bold.otf in Resources */,
+				4D8FF19F1A884701005CE741 /* OpenDyslexicAlta-BoldItalic.otf in Resources */,
+				4D8FF1A01A884701005CE741 /* OpenDyslexicAlta-Italic.otf in Resources */,
 				4D8FF1351A853BE4005CE741 /* LaunchScreen.xib in Resources */,
 				4D8FF1511A86B41A005CE741 /* logo-40pt.png in Resources */,
 				4D8FF14C1A86AABA005CE741 /* monster.png in Resources */,
 				4D8FF1321A853BE4005CE741 /* Images.xcassets in Resources */,
+				4D8FF1A11A884701005CE741 /* OpenDyslexicAlta-Regular.otf in Resources */,
+				4D8FF19B1A884701005CE741 /* OpenDyslexic-BoldItalic.otf in Resources */,
+				4D8FF1A21A884701005CE741 /* OpenDyslexicMono-Regular.otf in Resources */,
+				4D8FF19D1A884701005CE741 /* OpenDyslexic-Regular.otf in Resources */,
 				4D8FF1501A86B41A005CE741 /* logo-29pt.png in Resources */,
 				4D8FF1521A86B41A005CE741 /* logo-60pt.png in Resources */,
 			);
@@ -433,6 +477,7 @@
 				4D8FF1461A853BE4005CE741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D8FF1471A853BE4005CE741 /* Build configuration list for PBXNativeTarget "Hackathon 7Tests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +486,7 @@
 				4D8FF1491A853BE4005CE741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

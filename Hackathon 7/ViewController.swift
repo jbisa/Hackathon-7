@@ -50,8 +50,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         if (picker.sourceType == UIImagePickerControllerSourceType.Camera) {
             var takenImage: UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
-            var imageData = UIImagePNGRepresentation(takenImage)
-            //var imageData = UIImageJPEGRepresentation(takenImage, 100.0)
+            var imageData = UIImageJPEGRepresentation(takenImage, 1.0)
             
             if (imageData != nil) {
                 // Enter URL here
@@ -60,29 +59,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
                 request.HTTPMethod = "POST"
                 
-                //var boundary = NSString(format: "---------randomValueHere")
-                //var contentType = NSString(format: "multipart/form-data; boundary=" + boundary)
-                //var contentType = NSString(format: "multipart/form-data;")
-                //request.addValue(contentType, forHTTPHeaderField: "Content-Type")
+                //var body = NSMutableData.alloc()
+                //let count = imageData.length / sizeof(UTF8)
+                //body.appendBytes(imageData.bytes, length:count*sizeof(UTF8))
                 
-                var body = NSMutableData.alloc()
+                //body.appendData(imageData)
                 
-                // Title
-                //body.appendData(NSString(format: "\r\n--%@\r\n",boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                 //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format:"Content-Disposition: form-data; name=\"title\"\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData("IMG_0355.png".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
+                request.HTTPBody = imageData
                 
-                // Image
-                //body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format:"Content-Disposition: form-data; name=\"IMG_0355\"; filename=\"IMG_0355.PNG\"\\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "Content-Type: multipart/form-data\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-                body.appendData(imageData)
-                //body.appendData(NSString(format: "\r\n--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
-                //body.appendData(NSString(format: "\r\n--%@\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+                //println("****************request.HTTPBody: \(request.HTTPBody)")
                 
-                request.HTTPBody = body
+                //request.HTTPBody = body
                 
                 var response: NSURLResponse? = nil
                 var error: NSError? = nil
